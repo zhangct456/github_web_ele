@@ -24,34 +24,7 @@
         <link href="css/all.min.css?versionStr=bZQhhcdSnG1525942067665" rel="stylesheet">
     <title>金融服务平台</title>
     <script>
-		var _hmt = _hmt || [];
-		(function() {
-			var urlJsonStr = window.location.search;
-	    	var urlJson = urlJsonStr.substring(1,urlJsonStr.length).split("&");
-	    	var source;
-	    	for(var i = 0 ; i < urlJson.length ; i ++){
-				if(urlJson[i].split("=")[0]=="csii"){
-					source = urlJson[i].split("=")[1];
-				}
-			}
-	    	if(source){
-	    		//深圳通
-	    		if(source == "szt"){
-			        var hm = document.createElement("script");
-			        hm.src = "https://hm.baidu.com/hm.js?d563c58d56d3b6e1d9557ef4e66d420f";
-			        var s = document.getElementsByTagName("script")[0];
-			        s.parentNode.insertBefore(hm, s);
-	    		}
-	    		//创富港
-	    		if(source == "cfg"){
-	    			var hm = document.createElement("script");
-					hm.src = "https://hm.baidu.com/hm.js?246eda9e79b94f35ff4abdd32b989d5e";
-					var s = document.getElementsByTagName("script")[0]; 
-					s.parentNode.insertBefore(hm, s);
-	    		}
-	    	}
-	    })();
-	</script>
+    </script>
 
 </head>
 <body>
