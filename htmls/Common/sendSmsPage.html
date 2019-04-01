@@ -1,0 +1,20 @@
+<form name="smsForm" v-submit="sendSMS()" novalidate class="wxts" v-init="initSms()">
+    <div class="wxts_fc">
+        <div class="wxts_fc_div">
+            <h1 class="fize_1_2" style="font-size: 1.4rem;padding: 1vw 0;">短信验证</h1>
+            <img src="images/gb.png?versionStr=bZQhhcdSnG1525942067665" class="dx_gb" v-click="close()">
+            <h5 class="fize_0_8 " v-show="successFlag" style="font-size: 1rem;">已向{{MobilePhone|dimPhoneNumFilter}}发送验证短信</h5>
+            <div class="yzmk_1" style="height: 9vw;">
+                <div class="yzmk_t_2 marbri fl" style="height: 9vw;line-height: 9vw;">
+                    <input type="tel" class="yzmk_tex_1" name="MsgAuthCode" v-model="MsgAuthCode" v-pattern="/^\d{6}$/" pattern-message="请输入6位数字验证码" title="验证码" required-message="请输入验证码" maxlength="6" autocomplete="off" required>
+                </div>
+                <div class="yzmk_t_1 fl" style="height: 9vw;line-height: 9vw;">
+                    <button type="button" id="yzm_btn" class="yzmk_btn_1 " ui-sms="getSMS()">获取</button>
+                </div>
+            </div>
+            <div class="wxts_anniu_1">
+                <input type="submit" value="确定" class="wxts_btn">
+            </div>
+        </div>
+    </div>
+</form>

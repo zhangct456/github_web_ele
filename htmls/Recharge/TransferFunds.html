@@ -1,0 +1,51 @@
+<div>
+	<div class="kh_body">
+		<div class="di-ru">
+			<div class="yh_cont_2 bor_bo">
+				<ul class="top_1">
+					<li><span v-click="goto('#1')"><img src="images/zuo_1.png?versionStr=bZQhhcdSnG1525942067665"><em>返回</em></span><em v-click="$close()">关闭</em></li>
+					<li>资金转入</li>
+					<li></li>
+				</ul>
+			</div>
+			<div class="transferFundsText1">
+				<p>
+					一、资金转入限额表：
+				</p>
+				<table>
+					<thead>
+						<tr>
+							<th>支持银行</th>
+							<th>单笔（元）</th>
+							<th>单日（元）</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr v-repeat="item in TransferFundsList">
+							<td>{{item.BankName}}</td>
+							<td>{{item.Single}}</td>
+							<td>{{item.OneDay}}</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>
+					*实际转账限额如遇到临时调整，以发卡行最终设定为准。
+				</p>
+				<p>
+					二、资金转入方式：
+				</p>
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;您可直接从直销银行发起资金转入，或通过他行网上银行/手机银行向电子账户汇款进行资金转入。
+				</p>
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;支持直接通过直销银行发起转入的银行包括：招商银行、农业银行、广发银行、兴业银行、平安银行、民生银行、华夏银行、中信银行、浦发银行、招商银行、邮储银行、交通银行、建设银行、中国银行、农业银行、民生银行、华夏银行、光大银行、工商银行
+				</p>
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;通过网上银行、手机银行等渠道向电子账户汇款时，汇款银行卡户名与卡号，必须与直销银行绑定银行卡信息一致。
+				</p>
+			</div>
+			<input type="button" value="完成" class="kh_btn mart3" v-click="goback()" v-show="flag">
+			<div class="ryyw">如有疑问，请拨打晋商银行客服 <em><a href="tel:95105588">95105588</a></em></div>
+		</div>
+	</div>
+</div>

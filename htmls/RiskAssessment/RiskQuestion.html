@@ -1,0 +1,31 @@
+<div>
+	<div class="kh_body">
+		<div class="yh_cont_2 bor_bo">
+			<ul class="top_1">
+				<li><span v-click="goback()"><img src="images/zuo_1.png?versionStr=bZQhhcdSnG1525942067665"><em>返回</em></span><em v-click="$close()">关闭</em></li>
+				<li>风险评估</li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="cf_cont_1 mart">
+			<div class="kh_fx_1 " v-repeat="row in Questions" v-show="currentQueIndex == $index">
+				<h1 class="marb_none">{{$index+1}}、{{row.Question}}</h1>
+				<ul>
+					<li v-repeat="item in row.Answers" v-class="{'selected':$index==row.selectedIndex}" v-click="row.selectedIndex=$index;nextQuestion()">
+						<em>{{["A","B","C","D","E"][$index]}}</em>
+						<h4 class="fl" style="height: auto;">{{item}}</h4>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<ul class="fxpg_ys">
+			<li></li>
+			<li>
+				<div>{{currentQueIndex+1}}/{{Questions.length}}</div>
+			</li>
+			<li></li>
+		</ul>
+		<input type="button" value="上一题" class="kh_btn mart3" v-click="LastQuestion()" v-hide="currentQueIndex==0">
+		<input type="button" value="确认并提交" class="kh_btn mart3" v-click="submitAnswers()" v-show="submitAnswerFlag" style="margin-bottom: 30px;">
+	</div>
+</div>

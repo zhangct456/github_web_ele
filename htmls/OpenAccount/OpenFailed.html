@@ -1,0 +1,26 @@
+<div>
+	<div class="kh_body">
+		<div class="di-ru">
+			<div class="yh_cont_2 bor_bo">
+				<ul class="top_1">
+					<li><span v-click="goback()"><img src="images/zuo_1.png?versionStr=bZQhhcdSnG1525942067665"><em>返回</em></span><em v-click="$close()">关闭</em></li>
+					<li>开户</li>
+					<li></li>
+				</ul>
+			</div>
+			<div class="cf_cont_1 mart">
+				<div class="kh_jg">
+					<div class="kh_jg_dh fl">
+						<img src="images/kh_sb.png?versionStr=bZQhhcdSnG1525942067665">
+					</div>
+					<div class="kh_jg_zd fl">
+						<h1>电子账户开通失败！</h1>
+						<h2>失败原因：{{returnInfo.ReturnMsg}}</h2>
+					</div>
+				</div>
+			</div>
+			<input type="button" value="重新开户" v-click="goto('#0')" class="kh_btn mart3">
+			<div class="ryyw">如有疑问，请拨打晋商银行客服 <em><a href="tel:95105588">95105588</a></em></div>
+		</div>
+	</div>
+</div>

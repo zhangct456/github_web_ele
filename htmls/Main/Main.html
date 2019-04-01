@@ -1,0 +1,95 @@
+<div v-lazy-load="[_iscroll,'htmls/Main/Main.js?versionStr=bZQhhcdSnG1525942067665']">
+	<div v-controller="MainCtrl" v-init="init()">
+		<div class="cf_body">
+			<div class="yh_cont_2 bor_bo">
+				<ul class="top_1">
+					<li><span v-click="$close()"><img src="images/zuo_1.png?versionStr=bZQhhcdSnG1525942067665"><em>返回</em></span></li>
+					<li>财富管理</li>
+					<li>
+						<!--<div v-class="{'xx_div':!noticeState,'xx_div2':noticeState}"><img src="images/xx.png?versionStr=bZQhhcdSnG1525942067665" class="xx" v-click="goto('app.Notice')"></div>-->
+					</li>
+				</ul>
+			</div>
+			<div class="cf_cont_1 mart">
+				<div id="scrollWrapId" class="scrollWrap" ng-style="iphoneXScrollWrapStyle">
+					<div>
+						<div id="pullDown" class="pullDown" v-show="showProjectList.length" style="padding-bottom: 5px;">
+	                        <span class="pullDownIcon"></span>
+							<span class="pullDownLabel" style="line-height: 40px;">下拉刷新...</span>
+	                    </div>
+						<div v-class="{'csii24h1':showProjectList.length,'csii24h2':!showProjectList.length}">
+							<span>
+								如有问题请咨询微信号：
+								<span style="color: steelblue;">csii24h</span>
+							</span>
+						</div>
+						<!--<div v-if="source=='szt'">
+							<a href="https://jr.csiijf.com/jr/szt/yingxiao/">
+								<img src="images/banner.jpg?versionStr=bZQhhcdSnG1525942067665" style="width: 100%;margin-bottom: 10px;" />
+							</a>
+						</div>-->
+	                    <div class="cf_cont_1">
+						    <div class="fund-box well cf_cont_1_cp" v-repeat = "item in showProjectList" v-click="InvestmentProduct(item)">
+						    	<div class="cf_cont_1_qh mar4">
+									<h1 class="fl black ellipsis" style="font-weight: bold;">{{item.ProjectName}}</h1>
+									<div class="cf_cont_1_logo_1 fr" style="width: 50%;"><img src="images/nj_logo.png?versionStr=bZQhhcdSnG1525942067665"></div>
+								</div>
+								<div class="cf_cont_1_yq">
+									<h1 class="grey1 font-size-small">预期年化</h1>
+									<h2 class="red">{{item.ExpectIncome*100|number:2}}<em class="fize_1_3">%</em></h2>
+								</div>
+								<div class="cf_cont_1_yq_1">
+									<h1 class="grey1 font-size-small">期限</h1>
+									<h2 class="red">{{item.InvestLimit}}<em class="fize_1_3">天</em></h2>
+								</div>
+								<div class="cf_cont_1_yq_2">
+									<span class="cf_cont_1_btn fr">立即投资</span>
+									<!--<input type="button" value="立即投资" class="cf_cont_1_btn fr" v-click="InvestmentProduct(item)">-->
+								</div>
+								<div style="clear: both"></div>
+								<div class="cf_cont_1_jdt">
+									<h1 class="fl" style="width: {{100-(item.RemainAmt/item.ProjectScale*100)}}%;"></h1>
+									<h2 class="fr" style="width: {{item.RemainAmt/item.ProjectScale*100}}%;"></h2>
+								</div>
+								<div class="cf_cont_1_je ">
+									<h1 class="fl grey1">{{item.MinInvestAmt|numberFilter}}元起投</h1>
+									<h2 class="fl grey1">{{InvePayWay[item.PayWay]}}</h2>
+									<h3 class="fr grey1">剩{{item.RemainAmt|numberFilter:1}}/{{item.ProjectScale|numberFilter:2}}</h3>
+								</div>
+						    </div>
+	                    </div>
+					    <div id="pullUp" class="pullUp" v-show="showProjectList.length">
+	                        <span class="pullUpIcon"></span>
+						    <span class="pullUpLabel" style="line-height: 40px;">上拉加载更多...</span>
+	                    </div>
+	                    <div class="mainpage_reload" v-show="reloadFlag">
+						    <span class="mainpage_reload_img"></span>
+						    <span class="mainpage_reload_word" style="line-height: 40px;" v-click="getProducList()"> 加载失败，点击重新加载...</span>
+	                    </div>
+					</div>
+				</div>
+			</div>
+			<div class="cf_foot" ng-style="iphoneXStyle" v-hide="loginState">
+				<ul>
+					<li class="li_bac">
+						<div class="cf_wykh fl " v-click="toOpenAc()">
+							<h1 class="grey1">我要开户</h1>
+						</div>
+						<div class="cf_wykh_2 fr" v-click="toLogin()">
+							<h1 class="grey1">我要登录</h1>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="cf_foot" ng-style="iphoneXStyle" v-show="loginState" v-click="toMyAssets()">
+				<ul>
+					<li>
+						<div class="cf_wykh_1 ">
+							<h1 class="grey1">我的资产</h1>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

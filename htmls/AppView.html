@@ -1,0 +1,28 @@
+<div ui-view></div>
+<!-- 虚拟键盘 -->
+<div ui-keypad2="numpad" id="keynpm">
+    <div v-include="'numpadTemplate'"></div>
+   </div>
+   <script type="text/ng-template" id="numpadTemplate">
+        <div class="numpad-wrapper">
+        <div class="numpad">
+        <div class="button-wrapper">
+        <button ui-key2="[CANCEL]" class="top-btn">取消</button>
+        <input ui-input="numpad"/>
+        <button ui-key2="[OK]" class="top-btn">确定</button>
+        <button ui-key2="1" class="normal">1</button>
+        <button ui-key2="2" class="normal">2</button>
+        <button ui-key2="3" class="normal">3</button>
+        <button ui-key2="4" class="normal">4</button>
+        <button ui-key2="5" class="normal">5</button>
+        <button ui-key2="6" class="normal">6</button>
+        <button ui-key2="7" class="normal">7</button>
+        <button ui-key2="8" class="normal">8</button>
+        <button ui-key2="9" class="normal">9</button>
+        <button ui-key2="." class="normal">.</button>
+        <button ui-key2="0" class="normal">0</button>
+        <button ui-key2="[BACK]" class="small">删除</button>
+        </div>
+        </div>
+        </div>
+   </script>

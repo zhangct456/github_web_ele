@@ -1,0 +1,51 @@
+<form name="LoginForm" v-submit="Login()" novalidate v-init="init()">
+    <div class="kh_body">
+        <div class="di-ru">
+            <div class="yh_cont_2 bor_bo">
+                <ul class="top_1">
+                    <li><span v-click="goto('app.Main')"><img src="images/zuo_1.png?versionStr=bZQhhcdSnG1525942067665"><em>返回</em></span><em
+                            v-click="$close()">关闭</em></li>
+                    <li>登录</li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="cf_cont_1 mart">
+                <div class="cf_cont_yhmc_1 cf_cont_yhmc_login">
+                    <ul>
+                        <li style="line-height: 18vw;height: 18vw;">
+                            <h3 class="fl" style="font-size: 1.1rem;">手机号码</h3>
+                            <div class="kh_zd fl loginName">
+                                <input clear-input class="place-bold" type="tel" class="kh_text" name="LoginName" title="手机号" v-model="LoginName"
+                                       placeholder="请输入预留手机号码" required maxlength="11" v-pattern="/^1\d{10}$/"
+                                       pattern-message="手机号码或登录密码无效" required-message="请输入手机号码" style="font-size: 1.2rem;font-weight: bold;">
+                            </div>
+                        </li>
+
+                        <li style="line-height: 18vw;height: 18vw;">
+                            <h3 class="fl" style="font-size: 1.1rem;">登录密码</h3>
+                            <div class="kh_zd fl">
+                                <!--http://218.26.227.108-->
+                                <!--<input type="password" name="Password" v-model="Password" title="登录密码"
+                                placeholder="请输入密码" v-pattern="/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,20}$/" pattern-message="手机号码或登录密码无效"
+                                required required-message="请输入密码">-->
+                                <div id="vPasswordWidget"
+                                     v-password-widget="/portal/Fms.GetPasswordServletString.do"
+                                     modulus-hex="9c4ebeacd2f30283df44853e59b1c825f1a95760c44f48db786560806431faccc8b54e19bc5f37ba54ffc2b138ba336b545e51a51e1b5b297e84e4149e4440f845f6d2ac44829aa301b742a30e28efa619bcd7d148a5ec819808ae3974b5fd7672a2df0fce835031f45b897cb82887de57a5247f1989d24ac79cbb1df678918b"
+                                     minlength="8" maxlength="20" class="kh_text" name="Password">
+                                    8-20位数字加字母组合
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="kh_yd mart">
+                <h2 class="fr grey1 wjmm" v-click="goto('app.ForgetPassword')">忘记密码？</h2>
+            </div>
+            <input type="submit" value="立即登录" class="kh_btn mart3">
+            <input type="button" value="立即注册" class="kh_btn_z mart2" v-click="toOpenAc()">
+            <div class="ryyw">如有疑问，请拨打晋商银行客服 <em><a href="tel:95105588">95105588</a></em></div>
+
+        </div>
+    </div>
+</form>

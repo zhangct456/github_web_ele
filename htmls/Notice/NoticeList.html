@@ -1,0 +1,19 @@
+<div>
+	<div class="kh_body">
+		<div class="yh_cont_2 bor_bo">
+			<ul class="top_1">
+				<li><img src="images/zuo_1.png?versionStr=bZQhhcdSnG1525942067665" v-click="goback()"><em v-click="goback()">返回</em><em>关闭</em></li>
+				<li>消息列表</li>
+				<li></li>
+			</ul>
+		</div>
+		<ul class="xxlb_div">
+			<li v-repeat="row in noticeList" v-click="showDetail(row)">
+				<div class="fl texfl">
+					<h1 class="grey1 "> 国庆中秋假期服务公告</h1>
+					<h2 class="fize_0_8 grey1">2017-09-01 </h2>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

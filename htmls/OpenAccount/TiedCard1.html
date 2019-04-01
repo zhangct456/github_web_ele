@@ -1,0 +1,35 @@
+<form name="TiedCardForm1" v-submit="submitTiedCard()" novalidate>
+	<div class="kh_body">
+		<div class="di-ru">
+			<div class="yh_cont_2 bor_bo">
+				<ul class="top_1">
+					<li><span v-click="goto('#1')"><img src="images/zuo_1.png?versionStr=bZQhhcdSnG1525942067665"><em>返回</em></span><em v-click="$close()">关闭</em></li>
+					<li>开户</li>
+					<li></li>
+				</ul>
+			</div>
+			<div class="test mart">
+				<img src="images/test2.png?versionStr=bZQhhcdSnG1525942067665">
+				<ul>
+					<li class="step1">①开户信息验证</li>
+					<li class="step2">②绑定银行卡</li>
+					<li class="step3">③设置密码</li>
+				</ul>
+			</div>
+			<div class="cf_cont_1 mart">
+				<div class="cf_cont_yhmc_1">
+					<ul>
+						<li>
+							<h3 class="fl grey1">绑定卡卡号</h3>
+							<div class="kh_zd fl">
+								<input clear-input type="tel" class="kh_text_b col52" name="CardNo" v-model="TiedCardInfo.CardNo" required placeholder="请输入绑定卡卡号" title="绑定卡卡号" v-pattern="/^\d{16,}$/" pattern-message="卡号输入有误" required required-message="请输入绑定卡卡号" autocomplete="off">
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<input type="submit" value="下一步" class="kh_btn mart3">
+			<div class="ryyw">如有疑问，请拨打晋商银行客服 <em><a href="tel:95105588">95105588</a></em></div>
+		</div>
+	</div>
+</form>

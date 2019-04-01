@@ -1,0 +1,44 @@
+<form name="preForm" v-submit="doPre()" novalidate>
+	<div class="kh_body">
+		<div class="di-ru">
+			<div class="yh_cont_2 bor_bo">
+				<ul class="top_1">
+					<li><span  v-click="goback()"><img src="images/zuo_1.png?versionStr=bZQhhcdSnG1525942067665"><em>返回</em></span><em v-click="$close()">关闭</em></li>
+					<li>提现</li>
+					<li></li>
+				</ul>
+			</div>
+			<div class="cf_cont_1 mart">
+				<div class="kh_jg">
+					<div class="kh_jg_cz fl">
+						<img src="images/cz.png?versionStr=bZQhhcdSnG1525942067665">
+					</div>
+					<div class="kh_jg_cz_zd fl">
+
+						<h1>电子账户（晋商银行）</h1>
+						<h2>{{userInfo.EAcNo|dimAcNoFilter}}</h2>
+						<h3 class="grey1 fize_0_8" style="font-size: 0.9rem;">{{BankInfo.BankName}}（尾号{{userInfo.BandAcNo|limitTo:-4}}）</h3>
+					</div>
+
+				</div>
+			</div>
+			<ul class="cz_list">
+				<li class="mart">
+					<h3 class="fl">金额</h3>
+					<div class="cz_zd fl">
+						<input  style="width: 100%" ui-keypad-input2="numpad"
+								type="number" name="TrsAmount" v-model="TrsAmount" title="充值金额" 
+								placeholder="可转出总金额{{BalanceInfo.DepositAvailBal|currency}}" ui-number
+								v-pattern="/(^[1-9]([0-9]{0,11})?(\.[0-9]{1,2})?$)|(^0\.[1-9]([0-9])?$)|(^0\.[1-9]([1-9])?$)|(^0\.0([1-9])+$)/" 
+								pattern-message="金额错误，请重新输入" 
+								required required-message="请输入金额"  class="font-size-normal"/>
+					</div>
+				</li>
+
+			</ul>
+			<div class="tx_zi">如需单笔提现超50,000元，请下载晋商银行直销银行APP操作</div>
+			<input type="submit" value="提现" class="kh_btn mart3">
+			<div class="ryyw">如有疑问，请拨打晋商银行客服 <em><a href="tel:95105588">95105588</a></em></div>
+		</div>
+	</div>
+</form>

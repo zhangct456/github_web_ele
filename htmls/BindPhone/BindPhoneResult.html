@@ -1,0 +1,23 @@
+<div class="kh_body">
+    <div class="di-ru">
+        <div class="yh_cont_2 bor_bo">
+            <ul class="top_1">
+                <li><span  v-click="goback()"><img src="images/zuo_1.png?versionStr=bZQhhcdSnG1525942067665"><em>返回</em></span><em v-click="$close()">关闭</em></li>
+                <li>变更手机号</li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="cf_cont_1 mart">
+            <div class="cf_cont_yhmc_1 ">
+                <div class="bd_cg">
+                    <img v-src="{{result_img}}" alt="变更手机号">
+                    <h1 class="fize_1_3">恭喜，变更手机号成功</h1>
+                    <!--<h2 class="fize_0_8">提交失败，请重新发起</h2>-->
+                </div>
+            </div>
+        </div>
+        <!--<input type="button" value="重新发起" class="kh_btn mart3">-->
+        <input type="button" value="完成" class="kh_btn mart3" v-click="goto('app.MyAssets')">
+        <div class="ryyw">如有疑问，请拨打晋商银行客服 <em><a href="tel:95105588">95105588</a></em></div>
+    </div>
+</div>

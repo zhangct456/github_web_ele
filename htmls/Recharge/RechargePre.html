@@ -1,0 +1,61 @@
+<form name="preForm" v-submit="doPre()" novalidate>
+		<div class="kh_body">
+			<div class="di-ru">
+				<div class="yh_cont_2 bor_bo">
+					<ul class="top_1">
+						<li><span  v-click="goback()"><img src="images/zuo_1.png?versionStr=bZQhhcdSnG1525942067665"><em>返回</em></span><em v-click="$close()">关闭</em></li>
+						<li>充值</li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="cf_cont_1 mart">
+					<div class="kh_jg">
+						<div class="kh_jg_cz fl">
+							<img src="images/cz.png?versionStr=bZQhhcdSnG1525942067665">
+						</div>
+						<div class="kh_jg_cz_zd fl">
+							<h1 class="col52">{{BankInfo.BankName}}（尾号{{userInfo.BandAcNo|limitTo:-4}}）</h1>
+							<h3 class="grey1 fize_0_8 mart4" style="font-size: 0.9rem;">电子账户（晋商银行）<br>{{userInfo.EAcNo|dimAcNoFilter}}</h3>
+						</div>
+					</div>
+				</div>
+				<ul class="cz_list">
+					<li class="mart">
+						<h3 class="fl">金额</h3>
+						<div class="cz_zd fl">
+							<input 
+								 type="number" name="RechargeAmt" v-model="RechargeAmt" title="充值金额" 
+								 placeholder="请输入金额" ui-number  ui-keypad-input2="numpad"
+								 v-pattern="/(^[1-9]([0-9]{0,11})?(\.[0-9]{1,2})?$)|(^0\.[1-9]([0-9])?$)|(^0\.[1-9]([1-9])?$)|(^0\.0([1-9])+$)/" 
+								 pattern-message="金额错误，请重新输入"  
+								 required required-message="请输入金额" class="font-size-normal" style="width: 60%;"/>
+						</div>
+					</li>
+				</ul>
+				<input class="Recharge-btn" type="button" value="查看充值限额" v-click="goto('#3')" />
+				<input type="submit" value="充值" class="kh_btn mart3">
+				<div class="Recharge-msg">
+					<div class="Recharge-msg-title">
+						<p>
+							<span>温馨提示</span>
+						</p>
+					</div>
+					<div class="Recharge-msg-cont">
+						<p>
+							您可以使用{{BankInfo.BankName}}卡作为汇款银行卡，通过{{BankInfo.BankName}}手机银行、网上银行等方式向您的电子账户转入资金。
+						</p>
+						<p>
+							电子账户和开户行信息如下:
+						</p>
+						<p>
+							电子账户：{{userInfo.EAcNo}}
+						</p>
+						<p>
+							开户行：晋商银行迎泽支行
+						</p>
+					</div>
+				</div>
+				<div class="ryyw" style="bottom: auto;padding-top: 0;">如有疑问，请拨打晋商银行客服 <em><a href="tel:95105588">95105588</a></em></div>
+			</div>
+		</div>
+	</form>

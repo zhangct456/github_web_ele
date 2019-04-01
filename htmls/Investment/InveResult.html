@@ -1,0 +1,31 @@
+<div>
+	<div class="kh_body">
+		<div class="di-ru">
+			<div class="yh_cont_2 bor_bo">
+				<ul class="top_1">
+					<li style="height: 30px;"></li>
+					<li>投资</li>
+					<li></li>
+				</ul>
+			</div>
+			<div class="cf_cont_1 mart">
+				<div class="kh_jg">
+					<div class="kh_jg_dh fl">
+						<img src="images/jg.png?versionStr=bZQhhcdSnG1525942067665">
+						<img src="images/kh_sb.png?versionStr=bZQhhcdSnG1525942067665" v-show="">
+					</div>
+					<div class="kh_jg_zd fl">
+						<h1>{{returnInfo.ReturnMsg}}！</h1>
+						<h2 v-show="formData.TrsAmount">投资金额（元）：{{formData.TrsAmount|number:2}}</h2>
+						<h2 v-show="returnInfo.ExptEarn">预期收益（元）：{{returnInfo.ExptEarn|number:2}}</h2>
+						<h2 v-show="returnInfo.LatestInterestDate">预期起息日：{{returnInfo.LatestInterestDate}}</h2>
+					</div>
+				</div>
+			</div>
+
+			<input type="button" value="完成" class="kh_btn mart3" v-click="goback()">
+			<!--<input type="button" value="重新购买" class="kh_btn mart3" v-click="goto('#0')">-->
+			<div class="ryyw">如有疑问，请拨打晋商银行客服 <em><a href="tel:95105588">95105588</a></em></div>
+		</div>
+	</div>
+</div>
